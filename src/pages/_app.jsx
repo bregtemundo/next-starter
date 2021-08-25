@@ -12,15 +12,16 @@ import { SampleProvider } from "contexts/SampleContext";
 
 // Global Styles
 import "styles/global";
+import Layout from "../components/Layout/index";
 
 // Custom Application
 const CustomApp = ({ Component, pageProps }) => (
   <Main>
     <Head></Head>
 
-    <SampleProvider>
+    <Layout>
       <Component {...pageProps} />
-    </SampleProvider>
+    </Layout>
   </Main>
 );
 

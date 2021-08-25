@@ -7,6 +7,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 // Styles
 import Styles from "./index.module.scss";
+import Billboard from "../components/Billboard/index";
 
 // Page Component
 const Home = () => {
@@ -22,10 +23,11 @@ const Home = () => {
     <>
       <Head>
         <title>Home | Prismic</title>
-        <meta name="description" content="home des" />
+        <meta name="description" content="home desciption" />
       </Head>
 
       <div className={Styles["page"]}>
+        <Billboard />
         <h1>{t("Hello World!")} </h1>
       </div>
     </>

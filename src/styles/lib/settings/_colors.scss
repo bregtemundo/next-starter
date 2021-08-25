@@ -5,12 +5,18 @@
  *
  * @type Map
  */
-$default-colors: (
-  rainbow-red:            #ed1c24,
-  rainbow-orange:         #f26522,
-  rainbow-yellow:         #fff200,
-  rainbow-green:          #00a651,
-  rainbow-blue:           #0054a6,
-  rainbow-indigo:         #2e3192,
-  rainbow-violet:         #92278f,
+$colors: (
+  body: #111111,
+  muted: #7f7f7f,
+  primary: hsl(44, 100%, 50%),
+  secondary: #a0ffff,
+  light-background: #e7e6ea,
+  dark-background: #0e052b,
+  red: #dc0408,
+  disabled: #a6a8ab,
+  border: #d8d2bf,
+  selection: #0d0f11,
+  ok: green,
+  warning: orange,
+  error: #f96757,
 ) !default;

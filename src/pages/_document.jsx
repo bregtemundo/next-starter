@@ -10,8 +10,8 @@ class CustomDocument extends Document {
           <meta httpEquiv="X-UA-Compatible" content="IE=edge, chrome=1" />
 
           {/** Primary Meta Tags */}
-          <meta name="title" content="Next starter" />
-          <meta name="description" content="Next starter" />
+          <meta name="title" content="Prismic" />
+          <meta name="description" content="Prismic.io website" />
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover, user-scalable=no"

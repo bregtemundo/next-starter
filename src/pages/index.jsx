@@ -21,7 +21,7 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>Home | Next starter</title>
+        <title>Home | Prismic</title>
         <meta name="description" content="home des" />
       </Head>
 

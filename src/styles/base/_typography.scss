@@ -17,3 +17,278 @@ body {
   font-size: rem(16px);
   line-height: math.div(24, 16);
 }
+
+/*
+// set default type and font-size, color
+body {
+  //@include ff(body);
+  color: color(body);
+  @include type("base", 0, 0, "body");
+  margin: 0;
+}
+
+p {
+  margin-top: 0;
+  @include vr(margin-bottom, 1);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+a {
+  color: inherit;
+}
+
+//general styles
+
+// input
+input,
+textarea,
+select {
+  @include ff(body);
+  @include fw(body, normal);
+}
+
+// button
+button {
+  @include ff(body);
+  @include fw(body, normal);
+}
+
+// Headings. OpenType ligatures, discretionary ligatures and lining figures enabled if available.
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-feature-settings: "liga", "lnum", "kern";
+
+  @include ff(title);
+  @include fw(title, normal);
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Heading level 1.
+h1,
+.h1,
+.alpha {
+  @include type(h1, 0, 0, title);
+}
+
+// Heading level 2.
+h2,
+.h2,
+.beta {
+  @include type(h2, 0, 2, title);
+}
+
+// Heading level 3.
+h3,
+.h3,
+.gamma {
+  @include type(h3, 0, 1, title);
+}
+
+// Heading level 4.
+h4,
+.h4,
+.delta {
+  @include type(h4, 0, 1, title);
+}
+
+// Heading level 5.
+h5,
+.h5,
+.epsilon {
+  @include type(h5, 0, 1, title);
+}
+
+// Heading level 6.
+h6,
+.h6,
+.zeta {
+  @include type(h6, 0, 1, title);
+}
+
+small {
+  @include type(small, 0, 1, body);
+}
+
+// Bold.
+b,
+strong,
+.bold {
+  @include fw(body, bold);
+}
+
+.visually-hidden.visually-hidden,
+.js .js-hide {
+  display: none;
+}
+
+.intro {
+  @include type(h3, 1, 1, body);
+  @include fw(body, bold);
+}
+
+blockquote {
+  margin-left: 0;
+  margin-right: 0;
+}
+blockquote p {
+  @include type(quote, 1, 1, body);
+
+  &:before {
+    content: "";
+    display: inline-block;
+    vertical-align: baseline;
+    width: 1.7em;
+    height: 1.7em;
+    margin-right: vr(1);
+    margin-left: -0.7em;
+    background: url(../img/faded-triangle.svg) no-repeat 0 100%;
+    background-size: contain;
+
+    @include respond-to(md) {
+      vertical-align: text-bottom;
+    }
+  }
+}
+blockquote .author {
+  margin-top: vr(2);
+  margin-bottom: vr(4);
+  @include fw(body, bold);
+}
+
+//content styles (inside body field)
+.text-formatted {
+  //set margin
+  p,
+  .intro,
+  blockquote,
+  figure,
+  ul,
+  ol {
+    margin-top: vr(2);
+    margin-bottom: vr(2);
+  }
+
+  blockquote p {
+    margin-bottom: vr(1);
+  }
+
+  // larger space above titles
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin-top: vr(3);
+
+    //let title tags dictate margin
+    & + * {
+      margin-top: 0;
+    }
+  }
+
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  p.no-margin {
+    margin-bottom: 0;
+  }
+
+  // undo list reset
+  ul:not(.tabs) {
+    list-style: none;
+    li {
+      list-style: none;
+      &:before {
+        color: color(primary);
+        content: "\2022";
+        position: absolute;
+        margin-left: -1em;
+        font-size: 1.2em;
+        margin-top: -0.2em;
+      }
+    }
+  }
+
+  ol:not(.tabs) {
+    list-style: decimal;
+    li {
+      list-style: decimal;
+      &::marker {
+        content: "->";
+      }
+    }
+  }
+
+  // Lists.
+  ul:not(.tabs),
+  ol:not(.tabs) {
+    margin-top: vr(2);
+    margin-bottom: vr(1);
+
+    padding-left: 0;
+
+    li {
+      font-feature-settings: "kern", "onum", "liga";
+      margin-left: 1.5em;
+      margin-bottom: vr(1);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      ol,
+      ul {
+        padding-top: 1rem;
+        margin-top: 0;
+        margin-bottom: 1rem;
+        margin-left: 2rem;
+      }
+    }
+  }
+
+  table {
+    border-collapse: collapse;
+    max-width: 100%;
+    margin-top: vr(3);
+    margin-bottom: vr(3);
+
+    th,
+    td {
+      padding: 1em;
+      background-color: rgba(color(dark-background), 0.05);
+      text-align: left;
+      vertical-align: top;
+      border: 1px solid white;
+    }
+  }
+
+  .background--primary &,
+  .background--secondary & {
+    ul:not(.tabs) li:before {
+      color: inherit;
+    }
+  }
+}
+*/

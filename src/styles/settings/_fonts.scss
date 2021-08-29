@@ -1,10 +1,18 @@
 // https://deploy-preview-15--upbeat-shirley-608546.netlify.app/perfect-ish-font-fallback/?font=Merriweather
-// @font-face {
-//   font-family: "Aleo-fallback";
-//   size-adjust: 106.55000000000005%;
-//   ascent-override: 100%;
-//   src: local("Arial");
-// }
+@font-face {
+  font-family: "Noto-fallback";
+  size-adjust: 106.55000000000005%;
+  ascent-override: 100%;
+  src: local("Arial");
+}
+
+@font-face {
+  font-family: "Merriweather-fallback";
+  size-adjust: 122.8%;
+  ascent-override: 76%;
+  src: local("Times New Roman");
+}
 
 // font-face( $name, $path,  $weight: null,  $style: null,  $exts: eot woff2 woff ttf svg)
-// @include font-face("Aleo", "/assets/fonts/aleo-v4-latin-regular", 400);
+@include font-face("Noto", "/assets/fonts/noto-sans-v14-latin-regular", 400);
+@include font-face("Merriweather", "/assets/fonts/merriweather-v25-latin-700", 400);

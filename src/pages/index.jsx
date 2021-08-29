@@ -7,7 +7,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 // Styles
 import Styles from "./index.module.scss";
-import Billboard from "../components/Billboard/index";
+import Billboard from "../components/Billboard/Billboard";
 
 // Page Component
 const Home = () => {

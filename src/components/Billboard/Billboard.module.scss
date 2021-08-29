@@ -2,4 +2,63 @@
 
 .billboard {
   background: color(dark-background);
+  color: color(white);
+}
+
+.tagline {
+  color: color(muted);
+}
+
+.emailform {
+  display: inline-flex;
+  height: rem(40px);
+  border: 1px solid color(white);
+  border-radius: 50em;
+  padding: 2px;
+
+  input {
+    border: none;
+    appearance: none;
+    color: color(muted);
+    background: transparent;
+    border-radius: 50em;
+    padding: space(1) space(sm);
+    &:focus {
+      outline: none;
+      background: rgba(color(primary), 0.1);
+    }
+  }
+
+  submit {
+    width: rem(34px);
+    height: rem(34px);
+    appearance: none;
+    border: none;
+    background: color(white);
+    border-radius: 50%;
+  }
+}
+
+.features {
+  @include row;
+  gap: space(xxl);
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+}
+
+.feature + .feature {
+  border-left: 1px solid color(border);
+  padding-left: space(xxl);
+}
+
+.number {
+  font-size: 3em;
+  margin-right: space(sm);
+}
+
+.name {
+  color: color(muted);
 }

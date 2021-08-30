@@ -3,8 +3,6 @@
 
 @import "lib";
 
-@import "settings/fonts";
-
 // Utilities
 // // -----------------------------------------------------------------------------
 // @import "utils/variables";
@@ -34,7 +32,7 @@
 
 body {
   background-color: color(muted);
-  font-family: "Noto", "Noto-fallback";
+  //font-family: "Noto", "Noto-fallback";
 }
 
 h1,
@@ -43,10 +41,10 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Merriweather", "Merriweather-fallback";
+  //font-family: "Merriweather", "Merriweather-fallback";
 }
 h1 {
-  font-size: 4rem;
+  //font-size: 4rem;
 }
 .site-container {
   margin: space(xxl);

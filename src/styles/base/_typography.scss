@@ -1,3 +1,22 @@
+// https://deploy-preview-15--upbeat-shirley-608546.netlify.app/perfect-ish-font-fallback/?font=Merriweather
+@font-face {
+  font-family: "Noto-fallback";
+  size-adjust: 106.55000000000005%;
+  ascent-override: 100%;
+  src: local("Arial");
+}
+
+@font-face {
+  font-family: "Merriweather-fallback";
+  size-adjust: 122.8%;
+  ascent-override: 76%;
+  src: local("Times New Roman");
+}
+
+// font-face( $name, $path,  $weight: null,  $style: null,  $exts: eot woff2 woff ttf svg)
+@include font-face("Noto", "/assets/fonts/noto-sans-v14-latin-regular", 400);
+@include font-face("Merriweather", "/assets/fonts/merriweather-v25-latin-700", 400);
+
 // Default typography settings, to be included as soon as possible in the HTML
 // 1. Make type rendering look crisper
 // 2. The default font size is 16px
@@ -10,29 +29,20 @@ html {
   -webkit-text-size-adjust: 100%; /* 3 */ // scss-lint:disable VendorPrefix
 }
 
-// Default text styles
-// -----------------------------------------------------------------------------
-body {
-  font-family: "Helvetica", "Arial", sans-serif;
-  font-size: rem(16px);
-  line-height: math.div(24, 16);
-}
-
-/*
 // set default type and font-size, color
 body {
-  //@include ff(body);
+  @include font-family(body);
+  @include font-size(base);
   color: color(body);
-  @include type("base", 0, 0, "body");
+
   margin: 0;
 }
 
 p {
-  margin-top: 0;
-  @include vr(margin-bottom, 1);
+  margin-top: space(sm);
 
-  &:last-child {
-    margin-bottom: 0;
+  &:first-child {
+    margin-top: 0;
   }
 }
 
@@ -47,13 +57,13 @@ input,
 textarea,
 select {
   @include ff(body);
-  @include fw(body, normal);
+  @include fw(normal);
 }
 
 // button
 button {
   @include ff(body);
-  @include fw(body, normal);
+  @include fw(normal);
 }
 
 // Headings. OpenType ligatures, discretionary ligatures and lining figures enabled if available.
@@ -71,70 +81,61 @@ h6,
 .h6 {
   font-feature-settings: "liga", "lnum", "kern";
 
-  @include ff(title);
-  @include fw(title, normal);
-
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-
-  &:last-child {
-    margin-bottom: 0;
-  }
+  @include font-family(title);
+  @include font-weight(regular, title);
 }
 
 // Heading level 1.
 h1,
 .h1,
 .alpha {
-  @include type(h1, 0, 0, title);
+  @include fs(h1);
 }
 
 // Heading level 2.
 h2,
 .h2,
 .beta {
-  @include type(h2, 0, 2, title);
+  @include fs(h2);
 }
 
 // Heading level 3.
 h3,
 .h3,
 .gamma {
-  @include type(h3, 0, 1, title);
+  @include fs(h3);
 }
 
 // Heading level 4.
 h4,
 .h4,
 .delta {
-  @include type(h4, 0, 1, title);
+  @include fs(h4);
 }
 
 // Heading level 5.
 h5,
 .h5,
 .epsilon {
-  @include type(h5, 0, 1, title);
+  @include fs(h5);
 }
 
 // Heading level 6.
 h6,
 .h6,
 .zeta {
-  @include type(h6, 0, 1, title);
+  @include fs(h6);
 }
 
 small {
-  @include type(small, 0, 1, body);
+  @include fs(small);
 }
 
 // Bold.
 b,
 strong,
 .bold {
-  @include fw(body, bold);
+  @include fw(bold);
 }
 
 .visually-hidden.visually-hidden,
@@ -142,42 +143,8 @@ strong,
   display: none;
 }
 
-.intro {
-  @include type(h3, 1, 1, body);
-  @include fw(body, bold);
-}
-
-blockquote {
-  margin-left: 0;
-  margin-right: 0;
-}
-blockquote p {
-  @include type(quote, 1, 1, body);
-
-  &:before {
-    content: "";
-    display: inline-block;
-    vertical-align: baseline;
-    width: 1.7em;
-    height: 1.7em;
-    margin-right: vr(1);
-    margin-left: -0.7em;
-    background: url(../img/faded-triangle.svg) no-repeat 0 100%;
-    background-size: contain;
-
-    @include respond-to(md) {
-      vertical-align: text-bottom;
-    }
-  }
-}
-blockquote .author {
-  margin-top: vr(2);
-  margin-bottom: vr(4);
-  @include fw(body, bold);
-}
-
 //content styles (inside body field)
-.text-formatted {
+.prose {
   //set margin
   p,
   .intro,
@@ -185,12 +152,12 @@ blockquote .author {
   figure,
   ul,
   ol {
-    margin-top: vr(2);
-    margin-bottom: vr(2);
+    margin-top: space(2);
+    margin-bottom: space(2);
   }
 
   blockquote p {
-    margin-bottom: vr(1);
+    margin-bottom: space(1);
   }
 
   // larger space above titles
@@ -199,7 +166,8 @@ blockquote .author {
   h3,
   h4,
   h5 {
-    margin-top: vr(3);
+    margin-top: space(4);
+    margin-bottom: space(2);
 
     //let title tags dictate margin
     & + * {
@@ -219,14 +187,9 @@ blockquote .author {
   ul:not(.tabs) {
     list-style: none;
     li {
-      list-style: none;
-      &:before {
+      list-style: disc;
+      &::marker {
         color: color(primary);
-        content: "\2022";
-        position: absolute;
-        margin-left: -1em;
-        font-size: 1.2em;
-        margin-top: -0.2em;
       }
     }
   }
@@ -236,7 +199,8 @@ blockquote .author {
     li {
       list-style: decimal;
       &::marker {
-        content: "->";
+        //content: "->";
+        color: color(primary);
       }
     }
   }
@@ -244,25 +208,18 @@ blockquote .author {
   // Lists.
   ul:not(.tabs),
   ol:not(.tabs) {
-    margin-top: vr(2);
-    margin-bottom: vr(1);
+    margin-top: space(2);
+    margin-bottom: space(2);
 
     padding-left: 0;
 
     li {
       font-feature-settings: "kern", "onum", "liga";
       margin-left: 1.5em;
-      margin-bottom: vr(1);
-
-      &:last-child {
-        margin-bottom: 0;
-      }
+      margin-bottom: space(1);
 
       ol,
       ul {
-        padding-top: 1rem;
-        margin-top: 0;
-        margin-bottom: 1rem;
         margin-left: 2rem;
       }
     }
@@ -271,8 +228,8 @@ blockquote .author {
   table {
     border-collapse: collapse;
     max-width: 100%;
-    margin-top: vr(3);
-    margin-bottom: vr(3);
+    margin-top: space(3);
+    margin-bottom: space(3);
 
     th,
     td {
@@ -291,4 +248,3 @@ blockquote .author {
     }
   }
 }
-*/

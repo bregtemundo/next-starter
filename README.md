@@ -8,7 +8,10 @@
 
 - place your font files (woff, woff2) inside public/assets/fonts/
   folder.
-- edit settings src/styles/settings/\_fonts.scss and load the fonts with the `font-face( $name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg)` function
+- edit src/styles/base/\_typography.scss and load the fonts with the `font-face( $name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg)` function
+- define a fallback font in same settings file with size-adjust to prevent content shift while loading font
+- for title fonts it might help to preload them in \_document.jsx to prevent FOUT
+- edit src/styles/lib/settings/\_fonts.scss and define font styles and font sizes
 
 ## favicons
 

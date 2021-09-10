@@ -1,0 +1,15 @@
+@import "styles/lib";
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+}
+
+.menu {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  gap: space(md);
+  margin: 0 space(md);
+  align-items: center;
+}

@@ -1,0 +1,29 @@
+@import "styles/lib";
+
+.products {
+  background: color(white);
+  padding: space(xxl);
+}
+
+.title,
+.intro {
+  text-align: center;
+  margin: auto;
+}
+.intro {
+  max-width: 300px;
+  margin-top: space(md);
+  margin-bottom: space(xl);
+  color: color(muted);
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: space(sm);
+  margin-bottom: space(sm);
+}
+
+.productlist {
+  @include row;
+}

@@ -1,0 +1,14 @@
+@import "styles/lib";
+.product {
+  grid-column: span 12;
+  @include mq(xs) {
+    @include span(6);
+  }
+  @include mq(md) {
+    grid-column: span 3;
+  }
+}
+.product img {
+  max-width: 100%;
+  max-width: 100%;
+}

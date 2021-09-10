@@ -1,0 +1,17 @@
+@import "styles/lib";
+
+.footer {
+  background: color(dark-background);
+  color: color(white);
+  padding: space(xxl);
+
+  @include row;
+}
+
+.ayudo {
+  @include span(4);
+}
+
+.content {
+  color: color(muted);
+}

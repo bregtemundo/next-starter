@@ -10,9 +10,9 @@ $gutter: 1vw !default;
   width: 100%;
 
   @if $nr-of-columns == auto {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
   } @else {
-    grid-template-columns: repeat($nr-of-columns, 1fr);
+    grid-template-columns: repeat($nr-of-columns, minmax(0, 1fr));
   }
 }
 

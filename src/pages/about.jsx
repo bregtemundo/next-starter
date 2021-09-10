@@ -6,7 +6,7 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 // Styles
-import Styles from "./index.module.scss";
+import Styles from "./about.module.scss";
 import Billboard from "../components/Billboard/Billboard";
 import Products from "../components/Products";
 
@@ -27,9 +27,8 @@ const Home = () => {
         <meta name="description" content="home desciption" />
       </Head>
 
-      <div className={Styles["page"]}>
-        <Billboard />
-        <Products></Products>
+      <div className={Styles.about}>
+        <h1>{t("About")} </h1>
       </div>
     </>
   );

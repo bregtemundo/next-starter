@@ -1,0 +1,28 @@
+@import "styles/lib";
+
+.quote {
+  margin: space(xl);
+}
+.quote blockquote {
+  display: inline-block;
+  font-style: italic;
+  color: color(primary);
+  text-align: center;
+  @include font-family(title);
+  @include font-weight(regular, title);
+  @include font-size(h3);
+  border-left: 4px solid color(primary);
+  padding: space(xs) space(md);
+}
+
+.quote cite {
+  @include font-size(small);
+  display: flex;
+  color: color(muted);
+  margin-left: space(md);
+  padding-left: 4px;
+}
+.quote cite:before {
+  content: "-";
+  margin-right: space(xs);
+}

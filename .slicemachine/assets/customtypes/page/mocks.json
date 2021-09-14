@@ -1,0 +1,37 @@
+{
+  "id": "bb268d84-41f8-4085-95a7-d9a6d8b15b57",
+  "uid": "aut-totam-quibusdam",
+  "type": "page",
+  "data": {
+    "meta_title": "visualize wireless networks",
+    "meta_description": "incentivize intuitive deliverables",
+    "social_cards": [
+      {
+        "social_card_image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da?w=900&h=500&fit=crop"
+        },
+        "social_card_title": "deploy revolutionary niches",
+        "social_card_description": "scale bricks-and-clicks mindshare"
+      },
+      {
+        "social_card_image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1593642633279-1796119d5482?w=900&h=500&fit=crop"
+        },
+        "social_card_title": "embrace front-end deliverables",
+        "social_card_description": "morph turn-key functionalities"
+      }
+    ]
+  }
+}

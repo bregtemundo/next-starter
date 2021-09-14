@@ -1,0 +1,78 @@
+[
+  {
+    "variation": "default-slice",
+    "name": "Default slice",
+    "slice_type": "text_media",
+    "items": [],
+    "primary": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Iterate global e-services",
+          "spans": []
+        }
+      ],
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Duis Lorem adipisicing amet consectetur ad anim. Laborum exercitation pariatur cupidatat proident reprehenderit sint veniam adipisicing laboris. Commodo aliquip ullamco ut adipisicing duis nisi proident officia Lorem.",
+          "spans": []
+        }
+      ],
+      "image": {
+        "dimensions": {
+          "width": 900,
+          "height": 500
+        },
+        "alt": "Placeholder image",
+        "copyright": null,
+        "url": "https://images.unsplash.com/photo-1547082299-de196ea013d6?w=900&h=500&fit=crop"
+      },
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Magna consequat anim enim eu amet minim.",
+          "spans": []
+        }
+      ]
+    }
+  },
+  {
+    "variation": "mediaRight",
+    "name": "Media on the right",
+    "slice_type": "text_media",
+    "items": [],
+    "primary": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Empower magnetic web-readiness",
+          "spans": []
+        }
+      ],
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Irure voluptate ut sunt. Enim ipsum consequat adipisicing ullamco ullamco duis enim commodo. Voluptate reprehenderit reprehenderit aute amet nisi.",
+          "spans": []
+        }
+      ],
+      "image": {
+        "dimensions": {
+          "width": 900,
+          "height": 500
+        },
+        "alt": "Placeholder image",
+        "copyright": null,
+        "url": "https://images.unsplash.com/photo-1587653915936-5623ea0b949a?w=900&h=500&fit=crop"
+      },
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Id ad pariatur dolore officia deserunt officia. Aliquip voluptate ea ipsum ullamco. Cillum nostrud amet officia duis labore.",
+          "spans": []
+        }
+      ]
+    }
+  }
+]

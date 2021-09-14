@@ -23,6 +23,7 @@ const config = {
   
   // Images Options
   images: {
+    domains: ['images.unsplash.com', 'images.prismic.io'],
     deviceSizes: [
       320,
       450,

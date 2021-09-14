@@ -1,0 +1,34 @@
+@import "styles/lib";
+
+.textMedia {
+  @include mq(sm) {
+    @include row(2);
+  }
+}
+
+.media,
+.textMedia > div:first-child {
+  @include span(1);
+}
+
+.text {
+  grid-column: 2 / -1;
+}
+
+// variation image right
+.textMedia-mediaRight {
+}
+
+.media-mediaRight,
+.textMedia-mediaRight > div:first-child {
+  @include mq(sm) {
+    grid-column: 2 / -1;
+  }
+}
+
+.text-mediaRight {
+  @include mq(sm) {
+    grid-column: 1 / 1;
+    grid-row: 1;
+  }
+}

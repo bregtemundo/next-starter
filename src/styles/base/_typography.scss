@@ -130,6 +130,12 @@ strong,
   @include fw(bold);
 }
 
+a {
+  text-decoration: underline;
+  text-decoration-color: color(primary);
+  text-decoration-thickness: 2px;
+}
+
 .visually-hidden.visually-hidden,
 .js .js-hide {
   display: none;

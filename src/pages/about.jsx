@@ -1,21 +1,24 @@
 import React from "react";
 import Head from "next/head";
+import { Client } from "../../prismic-configuration";
+import SliceZone from "next-slicezone";
+import { useGetStaticProps, useGetStaticPaths } from "next-slicezone/hooks";
+
+import resolver from "../../sm-resolver.js";
 
 // i18n
-import { useTranslation } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+// import { useTranslation } from "next-i18next";
+// import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 // Styles
 import Styles from "./about.module.scss";
-import Billboard from "../components/Billboard/Billboard";
-import Products from "../components/Products";
 
 // Page Component
-const Home = () => {
+const About = (props) => {
   /**
    * i18n:
    */
-  const { t } = useTranslation();
+  //const { t } = useTranslation();
 
   /**
    * DOM:
@@ -23,18 +26,20 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>Home | Prismic</title>
-        <meta name="description" content="home desciption" />
+        <title>{props.data.meta_title}</title>
+        <meta name="description" content={props.data.meta_description} />
       </Head>
 
       <div className={Styles.about}>
-        <h1>{t("About")} </h1>
+        <h1>{"About"} </h1>
+        <SliceZone {...props} resolver={resolver} />
       </div>
     </>
   );
 };
 
 // Load Translations
+/*
 export async function getStaticProps({ locale }) {
   return {
     props: {
@@ -42,9 +47,21 @@ export async function getStaticProps({ locale }) {
     },
   };
 }
+*/
+
+// Fetch content from prismic
+export const getStaticProps = useGetStaticProps({
+  client: Client(),
+  type: "page",
+  apiParams({ params }) {
+    return {
+      uid: "about" /*params.uid*/,
+    };
+  },
+});
 
 // Track Re-Renders
-Home.whyDidYouRender = false;
+About.whyDidYouRender = false;
 
 // Export Pure Component
-export default React.memo(Home);
+export default React.memo(About);

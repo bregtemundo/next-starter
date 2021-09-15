@@ -49,7 +49,8 @@ export async function getStaticProps({ locale }) {
 }
 */
 
-// Fetch content from prismic
+// Fetch content from prismic (ignore linting useGetStaticProps is not a real react hook : https://github.com/prismicio/slice-machine/issues/131)
+/* eslint-disable */
 export const getStaticProps = useGetStaticProps({
   client: Client(),
   type: "page",

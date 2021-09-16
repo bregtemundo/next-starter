@@ -36,18 +36,18 @@ const CustomApp = ({ Component, pageProps }) => (
       <link rel="preload" href="/assets/fonts/merriweather-v25-latin-700.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
 
       {/** Open Graph / Facebook */}
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content="http://localhost:3001" />
-      <meta property="og:title" content="Next starter" />
-      <meta property="og:image" content="/assets/images/share.png" />
-      <meta property="og:description" content="Next starter" />
+      <meta property="og:type" key="ogtype" content="website" />
+      <meta property="og:url" key="ogurl" content="http://localhost:3001" />
+      <meta property="og:title" key="ogtitle" content="Next starter" />
+      <meta property="og:image" key="ogimage" content="/assets/images/share.png" />
+      <meta property="og:description" key="ogdescription" content="Next starter" />
 
       {/** Twitter */}
-      <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content="http://localhost:3001" />
-      <meta property="twitter:title" content="Next starter" />
-      <meta property="twitter:description" content="Next starter" />
-      <meta property="twitter:image" content="/assets/images/share.png" />
+      <meta property="twitter:card" key="twittercard" content="summary_large_image" />
+      <meta property="twitter:url" key="twitterurl" content="http://localhost:3001" />
+      <meta property="twitter:title" key="twittertitle" content="Next starter" />
+      <meta property="twitter:description" key="twitterdescription" content="Next starter" />
+      <meta property="twitter:image" key="twitterimage" content="/assets/images/share.png" />
 
       {/** Icons and theme color */}
       <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png" />

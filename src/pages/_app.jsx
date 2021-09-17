@@ -30,7 +30,7 @@ const CustomApp = ({ Component, pageProps }) => (
       {/** Primary Meta Tags */}
       <meta name="title" content="Next starter" />
       <meta name="description" content="Next starter" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover, user-scalable=no" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
 
       {/* preload important font-face */}
       <link rel="preload" href="/assets/fonts/merriweather-v25-latin-700.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />

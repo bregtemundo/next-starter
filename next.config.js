@@ -7,10 +7,17 @@ const withImages = require('next-images');
 // i18n
 const { i18n } = require('./next-i18next.config');
 
+// sitemap
+const withPrismicSitemap = require('@reecem/prismic-sitemap')
+const { sitemap } = require('./next-sitemap.config.js');
+
 // Configuration
 const config = {
   // Locales Options
   i18n,
+
+  // sitemap
+  sitemap,
 
   // linting
   eslint: {
@@ -124,4 +131,4 @@ const config = {
 };
 
 // Export Configuration
-module.exports = withImages(config);
+module.exports = withPrismicSitemap(withImages(config));

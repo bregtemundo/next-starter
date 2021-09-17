@@ -1,7 +1,7 @@
 const sm = require("./sm.json");
 const linkResolver = require('./prismic-utils');
 
-const SITE_URL = process.env.VERCEL_ENV ? process.env.VERCEL_ENV : process.env.SITE_URL;
+const SITE_URL = (process.env.VERCEL_ENV == 'preview' || process.env.VERCEL_ENV == 'development')  ? process.env.VERCEL_URL : process.env.SITE_URL;
 
 module.exports = {
   // the sitemap object is picked up by the package.

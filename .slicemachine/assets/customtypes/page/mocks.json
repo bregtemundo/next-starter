@@ -1,37 +1,29 @@
 {
-  "id": "bb268d84-41f8-4085-95a7-d9a6d8b15b57",
-  "uid": "aut-totam-quibusdam",
+  "id": "c27d5aca-a898-4b41-bd7e-34e42f87ab51",
+  "uid": "a-et-ab",
   "type": "page",
   "data": {
-    "meta_title": "visualize wireless networks",
-    "meta_description": "incentivize intuitive deliverables",
-    "social_cards": [
-      {
-        "social_card_image": {
-          "dimensions": {
-            "width": 900,
-            "height": 500
-          },
-          "alt": "Placeholder image",
-          "copyright": null,
-          "url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da?w=900&h=500&fit=crop"
-        },
-        "social_card_title": "deploy revolutionary niches",
-        "social_card_description": "scale bricks-and-clicks mindshare"
+    "meta_title": "syndicate dot-com web services",
+    "meta_description": "visualize 24/365 e-commerce",
+    "social-card-title": "streamline frictionless paradigms",
+    "social-card-text": "innovate distributed markets",
+    "social-card-image": {
+      "dimensions": {
+        "width": 1200,
+        "height": 630
       },
-      {
-        "social_card_image": {
-          "dimensions": {
-            "width": 900,
-            "height": 500
-          },
-          "alt": "Placeholder image",
-          "copyright": null,
-          "url": "https://images.unsplash.com/photo-1593642633279-1796119d5482?w=900&h=500&fit=crop"
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1586952518485-11b180e92764?w=1200&h=630&fit=crop",
+      "twitter": {
+        "dimensions": {
+          "width": 1200,
+          "height": 600
         },
-        "social_card_title": "embrace front-end deliverables",
-        "social_card_description": "morph turn-key functionalities"
+        "alt": "Placeholder image",
+        "copyright": null,
+        "url": "https://images.unsplash.com/photo-1586952518485-11b180e92764?w=1200&h=600&fit=crop"
       }
-    ]
+    }
   }
 }

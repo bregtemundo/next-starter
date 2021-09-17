@@ -42,33 +42,36 @@
           "placeholder": "The description that will appear in search engine"
         }
       },
-      "social_cards": {
-        "type": "Group",
+      "social_card_title": {
         "config": {
-          "fields": {
-            "social_card_image": {
-              "type": "Image",
-              "config": {
-                "constraint": {},
-                "thumbnails": [],
-                "label": "Social Card Image"
-              }
-            },
-            "social_card_title": {
-              "type": "Text",
-              "config": {
-                "label": "Social Card Title"
-              }
-            },
-            "social_card_description": {
-              "type": "Text",
-              "config": {
-                "label": "Social card description"
-              }
-            }
+          "label": "Social card title",
+          "placeholder": ""
+        },
+        "type": "Text"
+      },
+      "social_card_text": {
+        "config": {
+          "label": "",
+          "placeholder": ""
+        },
+        "type": "Text"
+      },
+      "social_card_image": {
+        "config": {
+          "label": "Social card Image",
+          "constraint": {
+            "width": 1200,
+            "height": 630
           },
-          "label": "Social Cards - Facebook & Twitter"
-        }
+          "thumbnails": [
+            {
+              "name": "twitter",
+              "width": 1200,
+              "height": 600
+            }
+          ]
+        },
+        "type": "Image"
       }
     }
   }

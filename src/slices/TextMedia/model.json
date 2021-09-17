@@ -11,6 +11,25 @@
       "version": "sktwi1xtmkfgx8626",
       "description": "TextMedia",
       "primary": {
+        "image": {
+          "config": {
+            "label": "",
+            "constraint": {},
+            "thumbnails": [
+              {
+                "name": "mobile",
+                "width": 400,
+                "height": 800
+              },
+              {
+                "name": "desktop",
+                "width": 600,
+                "height": 300
+              }
+            ]
+          },
+          "type": "Image"
+        },
         "title": {
           "type": "StructuredText",
           "config": {
@@ -27,14 +46,6 @@
             "allowTargetBlank": true,
             "single": "paragraph"
           }
-        },
-        "image": {
-          "config": {
-            "label": "",
-            "constraint": {},
-            "thumbnails": []
-          },
-          "type": "Image"
         },
         "content": {
           "config": {

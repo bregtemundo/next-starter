@@ -44,9 +44,6 @@ const CustomApp = ({ Component, pageProps }) => (
 
       {/** Twitter */}
       <meta property="twitter:card" key="twittercard" content="summary_large_image" />
-      <meta property="twitter:url" key="twitterurl" content="http://localhost:3001" />
-      <meta property="twitter:title" key="twittertitle" content="Next starter" />
-      <meta property="twitter:description" key="twitterdescription" content="Next starter" />
       <meta property="twitter:image" key="twitterimage" content="/assets/images/share.png" />
 
       {/** Icons and theme color */}

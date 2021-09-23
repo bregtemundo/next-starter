@@ -1,9 +1,10 @@
 import React from "react";
 import Link from "next/link";
+import LanguageSwitcher from "components/LanguageSwitcher";
 
 import Styles from "./Header.module.scss";
 
-function Header() {
+function Header({ altLangs }) {
   return (
     <header className={Styles.header}>
       <img className="logo" src="https://reprap.org/mediawiki/images/3/31/RepRap_Teardrop.svg" alt="Company" />
@@ -22,6 +23,8 @@ function Header() {
           <li>Stories</li>
         </ol>
       </nav>
+
+      <LanguageSwitcher altLangs={altLangs}></LanguageSwitcher>
     </header>
   );
 }

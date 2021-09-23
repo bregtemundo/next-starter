@@ -16,6 +16,7 @@ export const accessToken = "";
 // -- Link resolution rules
 // Manages the url links to internal Prismic documents
 export const linkResolver = require('./prismic-utils');
+export const hrefResolver = require('./prismic-utils');
  
 export const customLink = (type, element, content, children, index) => (
   <Link
@@ -31,7 +32,7 @@ export const Router = {
   routes: [
     {
       "type":"page",
-      "path":"/:uid"
+      "path":"/:lang/:uid"
     },
     // {
     //   "type":"home-page",

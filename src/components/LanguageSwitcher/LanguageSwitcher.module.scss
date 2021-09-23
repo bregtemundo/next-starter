@@ -1,0 +1,20 @@
+@import "styles/lib";
+
+.languageSwitcher {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  gap: space(xs);
+  margin-left: auto;
+  align-items: center;
+}
+
+.language {
+  text-transform: uppercase;
+}
+
+.active {
+  pointer-events: none;
+  opacity: 0.4;
+  text-decoration: none;
+}

@@ -8,7 +8,7 @@ export default function  ExitPreviewButton({ children }) {
     <div>
       {children}
       {isPreview ? (
-        <Link href="/api/exit-preview"><a className="exit-button" >Exit Preview</a></Link>
+        <Link href="/api/exit-preview" locale={false}><a className="exit-button" >Exit Preview</a></Link>
       ) : null}
       <style jsx>{`
       .exit-button {

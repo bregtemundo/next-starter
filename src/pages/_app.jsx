@@ -7,9 +7,6 @@ import Head from "next/head";
 // React Components
 import Main from "components/Main";
 
-// React Contexts
-import { SampleProvider } from "contexts/SampleContext";
-
 // Global Styles
 import "styles/global";
 import Layout from "../components/Layout/index";
@@ -58,7 +55,7 @@ const CustomApp = ({ Component, pageProps }) => (
       <meta name="theme-color" content="#ccff00" />
     </Head>
 
-    <Layout>
+    <Layout {...pageProps}>
       <Component {...pageProps} />
     </Layout>
   </Main>

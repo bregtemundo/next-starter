@@ -3,37 +3,34 @@ import Head from "next/head";
 import { Client } from "../../prismic-configuration";
 import SliceZone from "next-slicezone";
 import { useGetStaticProps, useGetStaticPaths } from "next-slicezone/hooks";
-
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 import resolver from "../../sm-resolver.js";
 
-// i18n
-// import { useTranslation } from "next-i18next";
-// import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-
 // Styles
-import Styles from "./about.module.scss";
+import Styles from "./page.module.scss";
 
 // Page Component
-const About = (props) => {
+const About = ({ content }) => {
   /**
    * i18n:
    */
-  //const { t } = useTranslation();
+  const { t } = useTranslation();
 
   /**
    * DOM:
    */
-  const title = props.data.meta_title;
-  const description = props.data.meta_description;
-  const ogtitle = props.data.social_card_title ? props.data.social_card_title : title;
-  const ogdescription = props.data.social_card_text ? props.data.social_card_text : description;
-  const ogimage = props.data.social_card_image.url;
-  const twitterimage = props.data.social_card_image.twitter.url ? props.data.social_card_image.twitter.url : ogimage;
+  const title = content.data.meta_title;
+  const description = content.data.meta_description;
+  const ogtitle = content.data.social_card_title ? content.data.social_card_title : title;
+  const ogdescription = content.data.social_card_text ? content.data.social_card_text : description;
+  const ogimage = content.data.social_card_image.url;
+  const twitterimage = content.data.social_card_image.twitter.url ? content.data.social_card_image.twitter.url : ogimage;
   return (
     <>
       <Head>
-        {title && <title>{props.data.meta_title}</title>}
-        {description && <meta name="description" content={props.data.meta_description} />}
+        {title && <title>{content.data.meta_title}</title>}
+        {description && <meta name="description" content={content.data.meta_description} />}
 
         {ogtitle && <meta property="og:title" key="ogtitle" content={ogtitle} />}
         {ogdescription && <meta property="og:description" key="ogdescription" content={ogdescription} />}
@@ -43,35 +40,34 @@ const About = (props) => {
       </Head>
 
       <div className={Styles.about}>
-        <h1>{"About"} </h1>
-        <SliceZone {...props} resolver={resolver} />
+        <SliceZone {...content.data} resolver={resolver} />
       </div>
     </>
   );
 };
 
-// Load Translations
-/*
-export async function getStaticProps({ locale }) {
+// Fetch content from prismic (ignore linting useGetStaticProps is not a real react hook : https://github.com/prismicio/slice-machine/issues/131)
+/* eslint-disable */
+export async function getStaticProps({ params, locale, locales, previewData, preview }) {
+  const ref = previewData ? previewData.ref : null;
+  const isPreview = preview || false;
+
+  const pagecontent = await Client().getByUID("page", params.uid, { ref, lang: locale });
+  const altLangs = pagecontent?.alternate_languages;
+  const translations = await serverSideTranslations(locale, ["common"]);
+
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common"])),
+      preview: {
+        isActive: isPreview,
+        activeRef: ref,
+      },
+      content: pagecontent,
+      altLangs,
+      ...translations,
     },
   };
 }
-*/
-
-// Fetch content from prismic (ignore linting useGetStaticProps is not a real react hook : https://github.com/prismicio/slice-machine/issues/131)
-/* eslint-disable */
-export const getStaticProps = useGetStaticProps({
-  client: Client(),
-  type: "page",
-  apiParams({ params }) {
-    return {
-      uid: params.uid,
-    };
-  },
-});
 
 export const getStaticPaths = useGetStaticPaths({
   client: Client(),
@@ -80,6 +76,7 @@ export const getStaticPaths = useGetStaticPaths({
       params: {
         uid: prismicDocument.uid,
       },
+      locale: prismicDocument.lang,
     };
   },
 });

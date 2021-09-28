@@ -19,10 +19,10 @@ module.exports = hrefResolver = (doc) => {
   const prefix = doc.lang !== "nl-nl" ? `/${doc.lang}` : "";
 
   if (doc.type === 'page') {
-    return `/${prefix}/${doc.uid}`;
+    return `${prefix}/${doc.uid}`;
   }
   if (doc.type === 'home') {
-    return `/${prefix}`;
+    return `${prefix}`;
   }
   return '/';
 }

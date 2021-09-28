@@ -4,11 +4,11 @@ import Footer from '../Footer/index';
 import ExitPreviewButton from '../ExitPreviewButton';
 
 
-function Layout({children, altLangs}) {
-
+function Layout({children, altLangs, navigation}) {
+  
   return (
     <div className="site-container">
-      <Header altLangs={altLangs} />  
+      <Header altLangs={altLangs} navigation={navigation} />  
           
       <main>{children}</main>
       <Footer />

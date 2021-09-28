@@ -52,6 +52,7 @@ export async function getStaticProps({ params, locale, locales, previewData, pre
   const ref = previewData ? previewData.ref : null;
   const isPreview = preview || false;
 
+  const navigation = (await Client().getSingle("menu", { ref, lang: locale })) || null;
   const pagecontent = await Client().getByUID("page", params.uid, { ref, lang: locale });
   const altLangs = pagecontent?.alternate_languages;
   const translations = await serverSideTranslations(locale, ["common"]);
@@ -63,6 +64,7 @@ export async function getStaticProps({ params, locale, locales, previewData, pre
         activeRef: ref,
       },
       content: pagecontent,
+      navigation: navigation,
       altLangs,
       ...translations,
     },

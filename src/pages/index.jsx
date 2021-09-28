@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import { Client } from "../../prismic-configuration";
 
 // i18n
 import { useTranslation } from "next-i18next";
@@ -36,9 +37,12 @@ const Home = () => {
 };
 
 // Load Translations
-export async function getStaticProps({ locale }) {
+export async function getStaticProps({ locale, ref }) {
+  const navigation = (await Client().getSingle("menu", { ref, lang: locale })) || null;
+
   return {
     props: {
+      navigation: navigation,
       ...(await serverSideTranslations(locale, ["common"])),
     },
   };

@@ -128,6 +128,16 @@ const config = {
     // Return Configuration
     return _config;
   },
+
+  async redirects() {
+    return [
+      {
+        source: '/testredirect',
+        destination: '/',
+        permanent: true,
+      },
+    ]
+  },
 };
 
 // Export Configuration

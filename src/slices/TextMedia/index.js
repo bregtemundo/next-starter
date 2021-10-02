@@ -24,8 +24,7 @@ function TextMedia({ blok }) {
         height={300}        
         className={classNames(Styles.media, Styles['media-'+blok.variation])}
         src={blok.image.filename}
-        alt={blok.image.alt}
-        loader="vercel"
+        alt={blok.image.alt}        
       /> 
 
       <div className={classNames(Styles.text, Styles['text-'+blok.variation])}>

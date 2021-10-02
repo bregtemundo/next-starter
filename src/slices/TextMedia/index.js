@@ -25,7 +25,7 @@ function TextMedia({ blok }) {
         className={classNames(Styles.media, Styles['media-'+blok.variation])}
         src={blok.image.filename}
         alt={blok.image.alt}
-        loader={storyblokLoader}
+        loader="vercel"
       /> 
 
       <div className={classNames(Styles.text, Styles['text-'+blok.variation])}>

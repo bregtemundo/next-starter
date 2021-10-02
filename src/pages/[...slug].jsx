@@ -97,7 +97,7 @@ export async function getStaticPaths({ locales }) {
 
     // get array for slug because of catch all
     const slug = data.links[linkKey].slug;
-    if (slug === "home") return false;
+    if (slug === "home" || slug === "settings") return false;
 
     // create additional languages
     for (const locale of locales) {

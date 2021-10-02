@@ -11,18 +11,12 @@ import Main from "components/Main";
 import "styles/global";
 import Layout from "../components/Layout/index";
 
-import { apiEndpoint } from "../../prismic-configuration"; // import the endpoint name from where it's defined
-const prismicRepoName = /([a-zA-Z0-9-]+)?(\.cdn)?\.prismic\.io/.exec(apiEndpoint)[1]; //Regex to get repo ID
-
 // Custom Application
 const CustomApp = ({ Component, pageProps }) => (
   <Main>
     <Head>
       <meta charSet="utf-8" />
       <meta httpEquiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-
-      {/* preview */}
-      <script async defer src={`//static.cdn.prismic.io/prismic.js?repo=${prismicRepoName}&new=true`} />
 
       {/** Primary Meta Tags */}
       <meta name="title" content="Next starter" />

@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
-import { Client } from "../../prismic-configuration";
+
+import Storyblok, { useStoryblok } from "../../storyblok";
 
 // i18n
 import { useTranslation } from "next-i18next";
@@ -24,7 +25,7 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>Home | Prismic</title>
+        <title>Home | Storyblok</title>
         <meta name="description" content="home desciption" />
       </Head>
 
@@ -37,8 +38,22 @@ const Home = () => {
 };
 
 // Load Translations
-export async function getStaticProps({ locale, ref }) {
-  const navigation = (await Client().getSingle("menu", { ref, lang: locale })) || null;
+export async function getStaticProps({ locale, ref, preview }) {
+  let slug = "home";
+
+  let sbParams = {
+    version: "published",
+    resolve_links: "url",
+    language: locale,
+  };
+
+  if (preview) {
+    sbParams.version = "draft";
+    sbParams.cv = Date.now();
+  }
+
+  let settings = await Storyblok.get(`cdn/stories/settings`, sbParams);
+  const navigation = settings.data.story.content.navigation || null;
 
   return {
     props: {

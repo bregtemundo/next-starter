@@ -18,5 +18,5 @@ module.exports = {
   saveMissing: SAVE_MISSING,
   saveMissingTo: 'current',
   saveMissingPlurals: true,
-  lowerCaseLng: true
+  //lowerCaseLng: true
 };

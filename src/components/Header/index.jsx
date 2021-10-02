@@ -1,7 +1,6 @@
 import React from "react";
 import NextLink from "next/link";
 import LanguageSwitcher from "components/LanguageSwitcher";
-import { RichText } from "prismic-reactjs";
 
 import Styles from "./Header.module.scss";
 import { useRouter } from "next/router";
@@ -16,12 +15,14 @@ function Header({ altLangs, navigation }) {
 
       <nav>
         <ol className={Styles.menu}>
-          {navigation?.data.menu_links.map((menu, ind) => {
-            const active = asPath === linkResolver(menu.link) || "/" + locale + asPath === linkResolver(menu.link);
+          {navigation?.map((menu, ind) => {
+            let link = menu.link.story?.full_slug ? menu.link.story?.full_slug : menu.link.cached_url;
+            const menulink = link.charAt(0) !== "/" ? "/" + link : link;
+            const active = asPath === menulink || "/" + locale + asPath === menulink;
             return (
               <li key={`menulink-${ind}`}>
-                <NextLink as={linkResolver(menu.link)} href={hrefResolver(menu.link)} passHref>
-                  <a className={classNames(Styles.link, { [Styles.active]: active })}>{RichText.asText(menu.label)}</a>
+                <NextLink as={menulink} href={menulink} passHref>
+                  <a className={classNames(Styles.link, { [Styles.active]: active })}>{menu.name}</a>
                 </NextLink>
               </li>
             );

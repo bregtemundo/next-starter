@@ -8,17 +8,14 @@ const withImages = require('next-images');
 const { i18n } = require('./next-i18next.config');
 
 // sitemap
-const withPrismicSitemap = require('@reecem/prismic-sitemap')
-const { sitemap } = require('./next-sitemap.config.js');
+
 
 // Configuration
 const config = {
   // Locales Options
   i18n,
 
-  // sitemap
-  sitemap,
-
+  
   // linting
   eslint: {
     dirs: ['/src'],
@@ -30,7 +27,7 @@ const config = {
   
   // Images Options
   images: {
-    domains: ['images.unsplash.com', 'images.prismic.io'],
+    domains: ['images.unsplash.com', 'a.storyblok.com','webwereld.nl'],
     deviceSizes: [
       320,
       450,
@@ -141,4 +138,4 @@ const config = {
 };
 
 // Export Configuration
-module.exports = withPrismicSitemap(withImages(config));
+module.exports = withImages(config);
